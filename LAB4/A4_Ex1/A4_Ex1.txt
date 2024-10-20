@@ -1,0 +1,141 @@
+-------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["
+-Skansholm, Jan(2016) C från början" 
+-"Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste  upplagan) Introduction to Algorithms", 
+-Eriksson, Kimmo & Gavel, Hillevi (senaste upplagan)
+Diskret matematik & diskreta modeller]
+
+website [https://...]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------
+
+
+
+
+This exercise is asked to implement many different functions the following is a short explanation of the function that was implemented in the task
+
+First the necessary structs were created with the necessary attributes for the exercise.
+The following struct was created
+
+
+
+-”ListNode”
+This struct was created for the adjacency list with an attribute for a value of a node and an attribute pointer to the next node in the list.
+
+-”List”
+This struct is to create an adjacency list for the nodes and have a pointer attribute for the head of the list.
+
+-”graph”
+This struct was created for the graph representation of the nodes and contains the following attributes:
+-Ver: an attribute that keeps track of the number of Nodes in the graph
+-edge: an attribute that keeps track of how many edges there are in the graph 
+-Dir: an attribute that diremen if a graph is directed or not.
+-arr: a pointer attribute for an array for the adjacency list
+
+
+
+After implementing all the structs the following functions was created:
+
+
+-CreateGraph
+The function takes in a graph, allocates memory for the graph and the adjacency list and returns the provided graph.
+
+- GetNumVertices
+This function's purpose is to return how many vertices(Nodes) a provided graph has. 
+The function first checks if the graph is empty and if it is it returns an error message and exits. 
+If the graph is not empty it returns the number of vertices with the help of the “Ver” attribute.
+
+- GetNumEdges
+This function's purpose is to return the number of edges a graph has. 
+It is similar to the “GetNumVertices” function but GetNumEdge returns the “edge” attribute and returns its value.
+
+- IsDirected
+The function follows the same logic as the two previous in that it returns the value of the Dir attribute.
+
+
+
+- GetInAdjs
+The purpose of this function is to check all the outgoing connections from the provided node u. 
+The function takes in two parameters: A graph G and a node u and from that node u. 
+The function checks all the outgoing connection from the node.
+
+
+- getOutAdjs 
+The purpose of the function is to check all the ingoing connections to a node in a directed graph. 
+The function does this by taking two parameters: a graph G and a node u and looks for every node that has a connection to node u and returns them.
+
+
+- Getlinked
+This function returns every conception to a node u regardless of the connection's direction. This function takes help of the two previous functions “GetInAdjs” and “getOutAdjs” 
+and returns both of the outputs of the function and in return returns all the connections from and to the node u.
+
+- HasEdges
+This function returns a value of 1 if the graph G has an edge (u,v) and if not the function returns the value of 0 indicating false.
+
+- AddDirectedEdge
+If the graph G is directed the function adds connections from node u to node v. The function allocates memory for the nodes and sets a connection from u to v. 
+
+- AddUndirectedEdge
+This function adds an undirected connection in the graph G to the two nodes u and v. 
+
+The code is implemented in the following files:
+ - exercise1.c
+
+
+- Code Execution
+The code was compiled and run in the visual studio code IDE.
+- open visual studio code
+- open the unzipped file in vs code
+- if not already download the extension “code runner” and “C/C++”
+- when/if the extensions is downloaded just right click on the coding space and press “run code”
+
+
+ Test cases: 
+
+
+Case 1 representation of the graphs G1 and G2:
+
+Output:
+Adjacency List of the Graph(G1):
+Node 1: 4 8 5 
+Node 2: 9 7 6 5 
+Node 3: 4 8 9 
+Node 4: 1 8 3 
+Node 5: 2 1 
+Node 6: 9 2 
+Node 7: 9 2 
+Node 8: 3 4 1 
+Node 9: 3 7 6 2 
+
+Adjacency List of the Graph(G2):
+Node 1: 4 8 5 
+Node 2: 5 9 
+Node 3: 4 
+Node 4: 8 
+Node 5: 0
+Node 6: 2
+Node 7: 9 2
+Node 8: 3 1
+Node 9: 3 6
+
+
+Case 2 every connection to and from vertex 9:
+Edges linked to vertex 9:
+(9, 6)
+(9, 3)
+(9, 7)
+(9, 2)
+This is to check if the function GetLinekd works. According to the provided G2 graph is this correct 
+because node 9 has an outgoing connection to 6,3 and 2 and 7 has a connection to 9. 
+
+
+
+ 

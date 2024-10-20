@@ -1,0 +1,22 @@
+-------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["Skansholm, Jan(2016) C från början" "Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste upplagan)
+Introduction to Algorithms"]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------
+
+
+The answer to what sorting algorithm is the best to sort an array that is in a descending order is the merge sort algorithm because the time complexity of the function is O(n log n) so regardless of the order of the array.
+
+The answer to  what algorithm is the best for sorting an array in an ascending order in our reflection is Insertion sort because it decreases the times of shifts and comparisons that the function does and in the best case has a constant time complexity.
+
+In the case that every element of an array is the same, the best algorithm is the insertion sort because the algorithm goes through the list the quickest because the algorithm just goes through the array and doesn't make any changes because it is already sorted.
+
+In the case that there are negative numbers in the list it does not impact the algorithms in any way. The merge and quicksort functions are affected by the length of an array and not the separate elements. In the case of the INsert algorithm it can be affected due to many shifts and comparisons leading to an exponential time complexity.

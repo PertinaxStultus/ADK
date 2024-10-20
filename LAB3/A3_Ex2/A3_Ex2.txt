@@ -1,0 +1,75 @@
+-------------------------------------------------------------------------------------------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["Skansholm, Jan(2016) C från början" "Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste upplagan)
+Introduction to Algorithms"]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+This exercise is asked to implement a TREE_height function that calculates the height of a given subtree x 
+
+- TREE_height
+The function takes in the root of a given binary search tree(BST) then checks if the root is NULL indicating  an empty BST, in that case The function returns the value -1 indicating an empty tree because a tree with just the root has the height of 0. 
+If the tree is not empty the function calculates the height of the two subtrees then returns the height of them.
+
+We were asked to make a function that calculates the balance factor of a given BST. balance factor meaning the difference in height in the two subtrees
+
+- BF
+The balance factor function takes in a root of a given tree then checks if the root is NULL indicating an empty tree in that case the function returns 0. If the tree is not empty then the function calculates the height of the two subtrees using the TREE_height function then returns the difference between them, 
+i.e the balance factor of the given BST.
+Next we were asked to use the provided generation function to generate 50 randomized arrays from the numbers 1 to 7. We did this by first altering the given “test_generate_array.c” file and following the Todo comments in the given file. 
+First we were asked to create a array to store the balance factor so we allocated memory for such an array then made a for loop that constructed the array in that for-loop we created a BST from the result_array then calculatested the balance factor of the array, 
+we did this by calling the balance factory function “BF” then we added the balance factor to the current bf_array  then we freed the memory for the result array. When that was done we printed out all the balance factors for all the randomized arrays.
+Then we were asked to do the same thing as stated before but instead of 50 randomized arrays with the length of 7 elements,we now were asked to print out 50 randomized arrays with the length of 15 elements.
+
+We came across a problem while doing part 3 and 4 that instead of printing out 50 different randomized arrays, the program printed out 1 randomized array 50 times, 
+we fixed this by moving the time seed form the “generate_array.c” file in to our main function in our “test_genreate_array.c” file, and that fixed the problem so now we get a new seed with every loop there for get a newly randomized array 50 times.
+
+Then in part 5 Ex2 we were asked questions and we answer them accordingly:
+
+- What are the potential upper and lower limits for the balance factor (BF)?
+in our observation of the previous code we came to the conclusion that the lower 
+lower limit of the balance factor is 0 and the potential higher limit i 6
+
+-What order of numbers would result in the highest possible BF ?
+in our observation we came to the conclusion that almost or entirely sorted lists have the highest BF
+
+-What order of numbers would result in the lowest possible BF ?
+we came to the conclusion that the more unsorted an array is the lower BF it BST will have
+
+-When a BST can be considered as balanced and when considered as imbalanced,based on the possible values of BF for any n?
+
+in our discussion we came to the conclusion that a BST with the BF value greater then 3 is considered unbalanced and
+ a balanced BST has the BF value less then 3 
+
+   
+The code is implemented in the following files:
+
+- File	generate_array.c
+- File	load_file.c
+- File	load_file.h
+- File	test_generate_array.c		(the file that generates 50 array with length of 7)
+- File	test_generate_arrayBIG.c  (the file that generates 50 array with length of 15)	
+
+
+
+- Code Execution:
+The code was compiled and run in the visual studio code IDE.
+- open visual studio code
+- open the unzipped file in vs code
+- if not already download the extension “code runner” and “C/C++”
+- when/if the extensions is downloaded just right click on the coding space and press “run code”
+
+
+Test cases
+
+Case 1:
+In this test case we used the my personal number to check if the height and balance factor function was correct 
+On our test we used [2, 0, 0, 4, 0, 9, 2, 1, 7, 2, 7, 1] and got the height of 5 and the balance factor of 1 

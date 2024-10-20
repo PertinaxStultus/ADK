@@ -1,0 +1,2 @@
+they are diffrent becuse the two vertices are at the opociet 
+end of the geraph and are apart of two diffrent strongly connected graphs

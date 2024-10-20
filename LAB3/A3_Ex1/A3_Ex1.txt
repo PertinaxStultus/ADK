@@ -1,0 +1,84 @@
+-------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["Skansholm, Jan(2016) C från början" "Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste upplagan)
+Introduction to Algorithms"]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------
+
+This exercise is asked to implement  seven different functions for a binary search tree that can insert a specific node, insert a node, delete a node and go through the entire tree. The first function that was asked to be implemented was the function TREE_search. This function takes two parameters, the root of the binary search tree(BST) and the key which is the targeted key that is searched for. The function goes through the provided BST starting from the root of the tree and goes through the right or left subtree depending if the key is bigger than the given root. The function does this until it finds the searched node or or reaches the end of the subtree that it is in. In the end the function lastly returns the key that is searched for or NULL if the function did not find any node.
+
+
+The next function is the TREE_minimum function that works is the following way:
+The function goes through all the left children of the nodes, if the node is to the left of its parent it indicates that is as a lesser value then its parent, so the function utilizes this logic by going through the BST by all the left children of the tree.
+
+
+-The TREE_maximum function utilizes the same logic but instead of going to the left children, it goes through all the right children until it finds the biggest child.
+
+
+
+-TREE_Predecessor function:
+This function looks for the given node's predecessor meaning that it looks for a node that just has one lesser value then the given node. The function does this by first checking if the BST left subtree is not empty. In that case the function finds the biggest node in the left subtree by calling the TREE_maximjm function. If the left subtree is empty the function finds the first parent that is a right child of its parent the moves through the tree until the function can find any more left children, meaning the function can find any more nodes that are less then the node that it's currently on. In the end the function returns the predecessor of the given node.
+
+
+-TREE_insert
+This function inserts a new given node into a given binary search tree. The function starts looking from the node of the tree then goes through the tree and depending if the given node is going to be inserted as a greater or lesser value than the root the function goes through the left or right subtree depending on the node's value. The function stops when it finds an appropriate spot for the given node to be inserted into the BST. the function keeps track of the parent node i.e the node that is previous to the node we want to insert, then the function links the inserted node into the tree and depending on the value of the node and the value of the nodes parent the function inserts the new node to the left or to the right of the parent node. And if the tree was now empty the function sets the inserted node as the root of the BST.
+
+
+-transplant
+This function was not in the list of the function that we were supposed to make but, this function is a part of the TREE_delete function that we were supposed to make.
+The transplant function changes a given node to another given node. The function does this by first checking if the node that we want to replace  is the root of the given BST, in that case the function sets the replacement node as the new root of the BST. If that is not the case the function updates the parent of the replacement node to be the parent node of the original node, then the function updates the child of the original node's parent to point to the replacement node instead. Resulting in the removal of the original node and the insertion of the replacement node.
+
+
+-TREE_delete
+This function deletes a given node z from the given BST T. the function looks if z has no left child and if not it relapses the node z with its right child by using the transplant function. Then the function checks  if the node z has not a right child and in that case the function relapses the node z with its left child by using the transplant function. And in the case that the node z has both a left and a right child the function finds the predecessor of the parent of the node z and moves the parent position to the position of the node z.
+
+
+-inorder_tree_walk
+This function goes through the given BST with the root x in a sorted way. The function does this by as long as the current node x is not NULL the function goes first through the left subtree, then prints out the key of x then the function goes through the right subtree in an inorder way  and prints out every key of x.
+
+The main function(1 to 4):
+The assignment here was to print out my personal number[2 0 0  4 0 9 2 1 7 2 7 1](PN) with the four last digits randomized in sorted order using myBST. We did this my first makes an array out of ty PN then a valuable that calculates how many elements my PN has in it. Then we constructed a for-loop that makes that array into a BST. After that we called the function “inorder_tree-walk” to print out my PN in a sorted manner, then we printed out the root key to my PN. In this case it is 2. Then is was time to find the number that was not in my PN we did once again a for-loop and in that fool loop we called our TREE_search function so it looks for every number from 0 to 9 that is not in my PN and in our testing we came to the conclusion that the number that are missing from my PN is:[ 3 5 6 8 ] then we added all the missing number in to my PN so now it looks like this: [0 0 0 1 1 2 2 2 3 4 5 6 7 7 8 9]. And lastly the root did not change form 2 when we inserted the missing numbers from my PN.
+
+The main function(5 to 8):
+This part of the assignment i.e task 2.5 to 2.8 we wanted to fist find the predecessor of the root in myBST is we did this my calling the predecessor function of our root and we got that the predecessor to our root is: 1
+
+2.6(predecessor to maximum key):
+We did this by making a if statement, if we called the function TREE_predesessor on our function TREE_maximum on our root and if was not NULL it would print out the predecessor to our to the maximum node of myBST and in our case it was the node 7
+
+2.7(predecessor to the minimum key):
+Once again we made an if-statement that checks of the call to the function TREE_predessesor that called TREE_minium was not NULL and if it was NULL this will result in a error message “The minimum key does not have a predecessor” and in our case that was the result. Because the minimum key is the key if the smallest value and those has no predecessor 
+
+2.8(new root after delete current root):
+We used yet again an if-statement to test this, after using the TREE_delete function on our root we checked with an if-statement of the root was not NULL we printed out the root and if the root was null we printed out an error message. And in our case it printed out a key of 1, so after deleting the root the new root is now 1
+
+
+
+The code is implemented in the following files:
+-file Exercise1.c
+-file Exercise1-2-1to4.c
+-file Exercise1-2-5to8.c
+
+- Code Execution:
+The code was compiled and run in the visual studio code IDE.
+- open visual studio code
+- open the unzipped file in vs code
+- if not already download the extension “code runner” and “C/C++”
+- when/if the extensions is downloaded just right click on the coding space and press “run code”
+
+
+
+Test cases:
+
+Case1:
+A main function was made to see if the code compiles correctly
+
+Case2:
+The functions was used the the rest of the assignment and had no logical error or misprints
+

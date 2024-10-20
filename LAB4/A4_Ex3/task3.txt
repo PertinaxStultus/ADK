@@ -1,0 +1,8 @@
+case vertex 1:
+if you transpoce the graph and start searching from vertex 1 
+the first verex that will be seached is vertex 8
+
+
+case vertex 9:
+if you transpoce the graph and start searching from vertex 9 
+the first verex that will be seached is vertex 2

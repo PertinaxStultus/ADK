@@ -1,0 +1,46 @@
+-------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["Skansholm, Jan(2016) C från början" "Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste upplagan)
+Introduction to Algorithms"]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------
+
+
+In this assignment we were asked to first Use the load file function to load one of the provided problem files into an array, we made a for-loop that took the elements from the loaded file and put them in an array.
+
+Then we were asked to sort the arrays with the algorithms from Ex1, so we just copied the function that we made in Ex1 and put them outside the main function, then we called the sorting functions in the main function before the for loop that made it into an array then we made a if statement to compare the array with the provided solution array the we loaded in separately. Then we printed out the result of the functions as instructed along with the solution array.
+
+For the fourth and last task of the exercise we populated the provided table with timestamps of how long it takes the arrays to be sorted, below is the result in the provided table.
+
+
+- The code Is the code was implemented in the following files 
+- load_file.c
+- load_file.h
+- test_load_file.c
+- test-10-1-problem
+- test-10-1-solution
+- test-1000-1-problem
+- test-1000-1-solution
+- test-100000-1-problem 
+- test-100000-1-solution 
+
+-test cases 
+
+n	| InsertionSort | MergeSort 	| QuickSort	    |
+------------------------------------------------------------------------------------
+10	|	0.038   |	0.040	|	0.035	    |
+-------------------------------------------------------------------------------------
+1,000	|	0.095	|	0.075	|	0.072       |
+--------------------------------------------------------------------------------------
+100,000|	10.276	|	4.812	|	4.667	    |
+
+these test results was made by observing the execution time out print in the windows terminal
+
+

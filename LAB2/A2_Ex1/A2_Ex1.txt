@@ -1,0 +1,43 @@
+-------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["Skansholm, Jan(2016) C från början" "Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste upplagan)
+Introduction to Algorithms"]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------
+
+This exercise is asked to implement three different function: Insertion-sort, merge-sort and quick-sort
+
+INSERTION_SORT
+The insertion sort takes as parameters a list and a given length of the list. The function starts from the beginning of the list and goes throughout the whole list using a for-loop. For each element the function stores the value in the variable key, then the function comares the key with the element before it switches the elements that are bigger than the key to the right of the key after that the function finds the right spot for the key itself in the provided list.
+
+MERGE_SORT
+The merge sort function first checks if there are enough elements in the provided list, if there is not, the function simply stops. If there is enough elements in the list the function calculates the midpoint of the array then the function calls it self to sort the left half of the array then it calls it self again to sort the other right side of the array, finally the function calls another function that merges the two halves of the provided array. The “merge array” function the merge sort function calls to forks in the following manner:
+The function first calculates the size of the left and right side of the two provided subarrays, then creates temporary arrays to store the two subarrays, after that the function copies the elements from the original array into the two subarrays. Then in the function we make three variables i , j and k for indexing the two sub arrays then merge them. After that the function goes through the two sub arrays and compares the elements and after that merging them into the main array.
+After that the merge sort function has done its job 
+
+QUICK_SORT
+The functions like merge sort first checks if the provided array has enough elements in it, if that is true the function divides the elements smaller than the pivot on the left side and bigger then the pivot on the right side. Then the function calls itself to sort the  left subarray and after that it calls itself again to sort the right subarray. The function does this until the array is sorted.
+
+
+The code is implemented in the following files:
+- Exercise1.c
+
+
+
+
+- Code Execution
+The code was compiled and run in the visual studio code IDE.
+- open visual studio code
+- open the unzipped file in vs code
+- if not already download the extension “code runner” and “C/C++”
+- when/if the extensions is downloaded just right click on the coding space and press “run code”
+
+
+- The point of the exercise was to implement a function, so in our testing we made a main function and see if it compiles or not and in our case it did.

@@ -1,0 +1,105 @@
+-------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["
+-Skansholm, Jan(2016) C från början" 
+-"Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste  upplagan) Introduction to Algorithms", 
+-Eriksson, Kimmo & Gavel, Hillevi
+Diskret matematik & diskreta modeller]
+
+website [https://...]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------
+
+This exercise is asked to implement an algorithm that computes the shortest-path distance from a given source s in V to all other vertices in the graph V. 
+This was done by observing the pseudocode in our course book.
+
+
+The majority of the code is the same as the previous code in A4_Ex, for the function for this exercise to work it required the “enqueue” and “dequeue” functions that was created in a previous lab
+ so the two function is imported from the A1 lab along with the necessary structs form the same lab. In short we were asked to implement The BFS function short for breadth First Search. 
+ The logic behind the function is the following: From the source the function goes through the entire level of a graph before the function goes to the next level.
+
+
+The code is implemented in the following files:
+- Exercice2.c
+
+
+- Code Execution
+The code was compiled and run in the visual studio code IDE.
+- open visual studio code
+- open the unzipped file in vs code
+- if not already download the extension “code runner” and “C/C++”
+- when/if the extensions is downloaded just right click on the coding space and press “run code”
+- Various test cases showcasing the functionality of my code:
+
+Case 1:
+Ran the code with the source vertex 1
+output:
+Processing vertex 1
+Visiting adjacent vertex 4
+Visiting adjacent vertex 8
+Visiting adjacent vertex 5
+Node marked black 1
+Processing vertex 4
+Node marked black 4
+Processing vertex 8
+Visiting adjacent vertex 3
+Node marked black 8
+Processing vertex 5
+Vertex 5 has no outgoing connections
+Node marked black 5
+Processing vertex 3
+Node marked black 3
+
+Distances from source node 1:
+Node 1: Distance = 0
+Node 3: Distance = 2
+Node 4: Distance = 1
+Node 5: Distance = 1
+Node 8: Distance = 1
+
+
+
+Case 2:
+Ran the code with the source vertex 9
+Output:
+Processing vertex 9
+Visiting adjacent vertex 3
+Visiting adjacent vertex 6
+Node marked black 9
+Processing vertex 3
+Visiting adjacent vertex 4
+Node marked black 3
+Processing vertex 6
+Visiting adjacent vertex 2
+Node marked black 6
+Processing vertex 4
+Visiting adjacent vertex 8
+Node marked black 4
+Processing vertex 2
+Visiting adjacent vertex 5
+Node marked black 2
+Processing vertex 8
+Visiting adjacent vertex 1
+Node marked black 8
+Processing vertex 5
+Vertex 5 has no outgoing connections
+Node marked black 5
+Processing vertex 1
+Node marked black 1
+Distances from source node 9:
+Node 1: Distance = 4
+Node 2: Distance = 2
+Node 3: Distance = 1
+Node 4: Distance = 2
+Node 5: Distance = 3
+Node 6: Distance = 1
+Node 8: Distance = 3
+Node 9: Distance = 0
+

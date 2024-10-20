@@ -1,0 +1,141 @@
+-------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["
+-Skansholm, Jan(2016) C från början" 
+-"Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste  upplagan) Introduction to Algorithms", 
+-Eriksson, Kimmo & Gavel, Hillevi
+Diskret matematik & diskreta modeller]
+
+websites: 
+[https://www.youtube.com/watch?v=9PHkk0UavIM&list=PL9xmBV_5YoZPKwb4XPB1sG7S6kNpN9JJo&index=4&ab_channel=MichaelSambol]
+[https://www.youtube.com/watch?v=obWXjtg0L64&list=PL9xmBV_5YoZPKwb4XPB1sG7S6kNpN9JJo&index=5&ab_channel=MichaelSambol]
+[https://www.youtube.com/watch?v=by93qH4ACxo&ab_channel=BroCode]
+[https://www.youtube.com/watch?v=Urx87-NMm6c&ab_channel=MichaelSambol]
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------
+
+
+
+We were asked to implement an algorithm to help Harry find his way to his dorm room after someone casted a wicked spell on Hogwarts. 
+This problem was described as a weighted directed graph and  In our understanding of the assignment it was like the fourth lab but with weights, so that is how the problem was tackled. 
+The implementations in the projects were the same implementations as lab 4 but modified so the functions can handle weights in the graph.
+
+The logic behind the function was taken from the course book, like lab 4 the implemented functions 
+were made by observing the pseudocode in the course book but slightly modified so it can handle modified graphs. 
+The following functions was implemented:
+
+
+- CreateGraphs:
+The function first allocates memory for the graph that the function creates. Then the function sets the number of vertices in the graph to values stored in a variable. 
+From the start  the function sets the number of edges to 0. Then in the adjacency list that we store the node values in the function puts every vertex into the list. 
+Then the function returns a pointer to the created graph.
+
+
+- DFS_reverse:
+The purpose of the function is to transpose the directions of the connections in the provided graph. This is to aid the SCC function as taught to us from the course book.
+
+
+- SCC:
+The main purpose of the function is to direct the strongly connected components in a provided graph which means the nodes in a graph that creates a loop. 
+The function does this by first taking in 4 parameters: the graph, the source node, the target nodes and an array that keeps track of all the visited nodes. 
+The function first allocates memory for the array that keeps all the visited nodes in the DFS then makes a stack for the DFS that stores the visited nodes in. 
+Afterwards the function calls on the DFS starting from the chosen source node and stores the created stack. The function then creates a transposed version of  the provided graph, then performs a DFS on the transposed graph. 
+To find the SCC In which the target node is in it first looks for the target vertex and sees if it has not been visited, then the function prints out the SCC that the target vertex is in. After all of that the function frees the memory from the array and the stack.
+
+
+
+- DFS:
+The main function of the DFS is to look through every level of the graph before going to the next branch of the graph. 
+See it as a guy looking for his friend in an office complex, he first looks in the nearest desk then goes down a level and does the same, 
+then after reaching the bottom level he goes back to where he started and looks at the next desk. 
+He repeats this until every desk has been searched. In the DFS function in the code it takes in 4 different parameters: 
+the graph that is going to be searched, the current vertex that is being looked at, an array that that stores all the visited vertices and a pointer to a stack that stores all the vistide vertices in the DFS search. 
+The function marks the visited vertices as visited by giving it a value of 1. Then in the created list the function goes through every vertex. 
+Then for every unvisited adjacent vertex the function recursively calls the DFS function in that vertex. After the function has visited all the vertices the function pushes the current vertex onto the backtracking stack.
+
+
+- AddDirectedEdge:
+The purpose of this function as the name implies is to add a directed edge into a graph. 
+The function takes in four different parameters: the first parameter is the graph itself, the second parameter is the node that the connection is coming from, 
+the third parameter is the node that takes the connection and the fourth parameter is the weight of the connection. The function first allocates memory for the new node to represent the directed edge. 
+The function sets the field of the new node to the target vertex, then makes the new node to the head of the adjacency list for the source vertex by pointing to the head of the list. 
+After that the function adds the information about the edge to the array graph.
+
+
+- bellmanFord:
+The purpose of the function is to find the shortest bath to a source and that in consideration that the graph may have negative cycles. 
+The function works in the following way. The function takes in three different parameters: the graph, the chosen source node and the chowsen target node.
+First in function there are two variables ‘Ver’ that contains the vertices in the graph  and the variable ‘E’ that contains the edges. 
+The function then creates an array that stores the distance from the source vertex to all other vertices in the graph. 
+From the start all distances from the source node are set to infinity with the help of the library ‘limits.h’ the variable ‘INIT_MAX’ can be used as the reference to infinity. 
+As stated all distances in the graph are set to infinity except the distance from the source node that is set to 0 because the function starts from the source node and those have no distance to the source node. '
+Next in the function we create the ‘Relax’ function, as in the relax function is built into the bellman-Ford function. The Relax function works in the following way. 
+The function goes through all the vertices in the graph except 1 that is the start node, to find the shortest path to the target node. Then the function goes to every vertex in the graph and updates the distance and if a shorter path is found it updates the path so now that is the current path. 
+After that the function looks if the target vertex has been found and if it has, the function prints out the distance from the source to the target. 
+The negative cycle detection in the function works in the following way. 
+The function goes through the graph another time to find the negative cycles, it detects this by if a distance to a vertex can still be improved after subtraction it by 1, it means that there is a negative cycle.
+If their target node is reachable from the source node the function returns the weight it gained or lost when going through the route.
+
+
+
+- The main function:
+
+The first thing in the main function is to set the ‘Ver’ variable that keeps the number if vertices ub the graph to 8 in the graph G1 and 13 in G2. and the variable ‘E’ that keeps track of all the edges in the graph to 10  in G1 and 21 in G2. 
+then the “AddDirectedEdge” function is called to make the edges in the two graphs then set the source and target node to 0 and 4 in G1 i.e vertex ‘S’ as the source node because the vertex has no ingoing connection and “D” as the target vertex because 
+it is the node in a  positive SCC that has the least amount of energy grain or lost. In G2 the source node is 12 because it has no ingoing connection and the target vertex in G2 is 2 because it is the cheapest vertex to go to in a positive SCC.
+
+
+
+
+The code is implemented in the following files:
+INFO: G1 and G2 are in  two different files to make the implementations easier. 
+
+file: HogwartsTINY.c	(file with G1)
+file: HogwartsBIG.c	(file with G2)
+
+- Code Execution
+The code was compiled and run in the visual studio code IDE.
+- open visual studio code
+- open the unzipped file in vs code
+- if not already download the extension “code runner” and “C/C++”
+- when/if the extensions is downloaded just right click on the coding space and press “run code”
+
+- Various test cases showcasing the functionality of the code:
+
+Case 1(G1):
+
+Going from node 0 to node 1 through edge (0, 1) with weight 3. weight gained/lost: 3
+Going from node 0 to node 3 through edge (0, 3) with weight 5. weight gained/lost: 5
+Going from node 0 to node 5 through edge (0, 5) with weight 2. weight gained/lost: 2
+Going from node 1 to node 2 through edge (1, 2) with weight -4. weight gained/lost: -1
+Going from node 2 to node 7 through edge (2, 7) with weight 4. weight gained/lost: 3
+Going from node 3 to node 4 through edge (3, 4) with weight 6. weight gained/lost: 11
+Target node reached. Stopping the algorithm.
+Minimum weight from node 0 to node 4: 11
+Strongly Connected Component containing target vertex 4: 3 4
+
+The function goes to the first available nodes for the source nodes then fist goes as deep as it can go then hops to the next branch. 
+Then the function prints out the minimum weight from the source node to the target node, then prints out the SCC that the target node is in.
+
+
+Case 2(G2):
+Going from node 11 to node 3 through edge (11, 3) with weight 3. Cumulative weight: 3
+Going from node 11 to node 10 through edge (11, 10) with weight 3. Cumulative weight: 3
+Going from node 12 to node 2 through edge (12, 2) with weight 2. Cumulative weight: 2
+Going from node 2 to node 7 through edge (2, 7) with weight 3. Cumulative weight: 5
+Going from node 7 to node 4 through edge (7, 4) with weight -2. Cumulative weight: 3
+Going from node 10 to node 6 through edge (10, 6) with weight 7. Cumulative weight: 10
+Going from node 4 to node 2 through edge (4, 2) with weight -2. Cumulative weight: 1
+Going from node 6 to node 1 through edge (6, 1) with weight -2. Cumulative weight: 8
+Target node reached. Stopping the algorithm.
+Minimum weight from node 11 to node 1: 8
+Strongly Connected Component containing target vertex 1: 1 5 8
+
+In our solution we index our vertices from 0 so node 1 is node 0 and so forth. The output is like the result form G2. 
+the source is 11 and the target is 2.

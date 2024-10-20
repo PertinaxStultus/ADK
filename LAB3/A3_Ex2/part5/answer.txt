@@ -1,0 +1,13 @@
+    - What are the potential upper and lower limits for the balance factor (BF)?
+    in our observation of the previus code we came to the conclution that the lower 
+    lower limit of the balance factor is 0 and the potential higher limit i 6
+
+    -What order of numbers in would result in the highest possible BF ?
+    in our observation we came to the conclution that almost or entirely sorted lists have the highrst BF
+
+    -What order of numbers in would result in the lowest possible BF ?
+    we came to the conclution that the more unsorted an array is the lower BF it BST will have
+
+    -When a BST can be considered as balanced and when considered as imbalanced,based on the possible values of BF for any n?
+    in our disscusion we came to the conclution that a BST with the BF value grater then 3 is considered unbalanced and
+    a balanced BST has the BF value less then 3 

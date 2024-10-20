@@ -1,0 +1,55 @@
+-------------------------------------------------------------------------------------------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["Skansholm, Jan(2016) C från början" "Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste upplagan)
+Introduction to Algorithms"]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+In this assignment we were asked to choose from the provided material and choose two different sizes 1000 and 100000. And use the load file function to load them into arrays.
+
+So we started this by first implementing the functions form the previous exercise in to the “test_load_file_LAB3.c” file the we used the load_file function to fist load in the problem file with 1000 elements and
+ assign it to a variable A then we took the solution file to that file and loaded it in with the same function and assign it to the variable B. after that we implemented the same code from the EX2 file as to create a BST and then print out A in a sorted manner 
+ then we used the TREE_heigth function to find 
+ the height of the given tree then the balance factor.
+After that we made a if statement to compare the two files after altering A so if A is equal to B then A is sorted because B is a sorted version of A.
+
+part 4 
+In this part we were asked to calculate the balance factor for each BST using the algorithm in Ex2 for each BST, the explain whether oru BST is balanced or unbalanced here is our recollection:
+
+ -test file 1000
+the balance factor of the file with 1000 is 5 witch is fairly balanced for an BST for its size
+
+-test file 100000
+The balance factor for the file with 1000000 we got the balance factor of 15 with is really good for a BST of its size
+
+
+The code is implemented in the following files:
+- File	load_file.c
+- File	load_file.h
+- File	test_load_file_LAB3.c
+- File	test-1000-1-problem
+- File	test-1000-1-solution
+- File	test-100000-1-problem
+- File	test-100000-1-solution
+
+- Code Execution:
+The code was compiled and run in the visual studio code IDE.
+- open visual studio code
+- open the unzipped file in vs code
+- if not already download the extension “code runner” and “C/C++”
+- when/if the extensions is downloaded just right click on the coding space and press “run code”
+
+Test cases
+Case1: we compared test-1000-1-problem after it was sorted with test-1000-1-solution and with the help of our if statements we came to the conclusion that test-1000-1-problem was sorted 
+
+Case2:Case1: we compared test-100000-1-problem after it was sorted with test-100000-1-solution and with the help of our if statements we came to the conclusion that test-100000-1-problem was sorted 
+

@@ -1,0 +1,83 @@
+-------------------------------------------
+G2_Team12
+Erik Andrén (ID: 040921), Elias Örnebjär(ID: 040502)
+
+Disclosure:
+To perform this exercise WE have utilized external resources and assistance
+-LLM- based Chatbot[ChatGPT]
+
+-Literature ["
+-Skansholm, Jan(2016) C från början" 
+-"Cormen, Thomas H., Leiserson, Charles E., Rivest, Ronald L. and Stein, Clifford (senaste  upplagan) Introduction to Algorithms", 
+-Eriksson, Kimmo & Gavel, Hillevi
+Diskret matematik & diskreta modeller]
+
+website [https://...]
+
+Disclaimer: One of the group members is dyslexic so please keep it in mind while you read through this and the following txt files.  
+-------------------------------------------
+
+In this exercice we where asked to implementa function to find the strongly connectedcomonets of a graph.
+strongly connected components is components that are liked in every direction createing sort of a loop
+The functions DFS and SCC were constructed with the help of the pseudocode in the course book.
+
+
+Here is an explanation of how the functions in the program works:
+
+- createGraph
+This creates a graph V, the function allocates memory for the graph and returns the graph V.
+
+- AddDirectedEdge
+Like in the previous exercise the function allocates memory for a 
+node then makes a directed connection between them from the “src” node to the “dest” node.
+
+- DFS:
+The DFS function sort for Depth First Search function does as it says. 
+It looks through a provided graph as far down a tree as it can before going to the next branch of the graph.
+
+
+- SCC:
+
+The SCC is short for strongly connected components; 
+this function looks for strongly connected components in a graph strongly connected to mean that between two or more components that
+there is a connection in every direction. 
+So what the function does is that I search for these types of connections and return them.
+
+
+
+- DFS_reverse(transponent)
+This function is to reverse the connection directions in the graph. This function was implemented for the 
+SCC function because the logic behind the function depends on this action.
+
+The code is implemented in the following files:
+ - exercice3.c
+
+
+- Code Execution
+The code was compiled and run in the visual studio code IDE.
+- open visual studio code
+- open the unzipped file in vs code
+- if not already download the extension “code runner” and “C/C++”
+- when/if the extensions is downloaded just right click on the coding space and press “run code”
+
+
+- Various test cases showcasing the functionality of my code:
+
+- Case 1:
+
+The search start from vertex 1:
+output:
+Strongly Connected Component starting from 1: 1 3 4 8 
+Strongly Connected Component starting from 2: 2 6 9 
+Strongly Connected Component starting from 5: 5
+Strongly Connected Component starting from 7: 7
+
+
+- Case 2:
+
+The search start from vertex 2:
+Output:
+Strongly Connected Component starting from 2: 2 6 9 
+Strongly Connected Component starting from 3: 1 3 4 8 
+Strongly Connected Component starting from 5: 5 
+Strongly Connected Component starting from 7: 7 

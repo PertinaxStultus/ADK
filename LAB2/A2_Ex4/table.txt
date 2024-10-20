@@ -1,0 +1,12 @@
+Include this table in the answers of A2_Ex4.txt file, filled with running times.
+
+
+n	    | InsertionSort | MergeSort 	| QuickSort 	|
+--------------------------------------------------------
+10	    |	0.038   |	0.040	    |	0.035	    |
+--------------------------------------------------------
+1,000	|	0.095	|	0.075	    |	0.072       |
+--------------------------------------------------------
+100,000	|	10.276	|	4.812	    |	4.667	    |
+
+these test results was made by observing the execution time out print in the windows terminal

@@ -1,0 +1,45 @@
+============================================================================================================================================================
+*-The input array is sorted in a descending order:*
+
+In the case of the Insertion sort it preforms badly in a descending order, because it needs to compare and shift every element almost every time, 
+leading to a exponential time complexity (O(n^2)) 
+
+In the case of merge sort has a time complexity consistently O(n log n) regardless of the initial order of the provided array, 
+because the function dose not depend on the initial state there for is the merge sort the most efficient for 
+sorting algorithm for an array in a descending order
+
+In the case of the quick sort algorithm the performance is bad in the case of a descending order, 
+because in the case of the pivot ends up unevenly for example the last element in a descending order array it can lead to a exponential time complexity
+
+so in conclusion, of the three different sorting algorithm the merge sort is the best when it comes to an array in a descending order
+============================================================================================================================================================
+*-The input array is sorted in a ascending order:*
+The performance of the Insertion sort is can perform really well on in a ascending array order, 
+in the best case having a constant time complexity(O(n)) when the input is already sorted because it minimizes the times of the comparisons and shifts
+
+In the cse of the merge sort algorithm it will perform at the time complexity of O(n log n) with is unevenly complex for a sorted array
+
+the quick sort algorithm can face a pivot problem like the Insertion sort can in a descending arrays, 
+so in a special case the quick sort can not be optimal for arrays in a ascending order
+
+in comparisons the best algorithm for an array in a ascending order in the Insertion array because it can a have a constant time complexity
+============================================================================================================================================================
+*-All elements in the array are the same:*
+merge sort a have a divide and conquer method so it works well no mater the input
+
+Insertion sort will go  through the array and compare the all element in the provided array resulting in a exponential time complexity
+
+quick sort have a pivot method so it will have a hard time dividing the two sub arrays if all the elements are the same
+
+so in conclusion the best algorithm for sorting a array if all the elements are all the same is 
+the merge sort because it works no mater the elements
+============================================================================================================================================================
+
+*-There are both positive and negative numbers in the array:*
+
+both merge and quick sort will not be effected for positive or negative numbers due to both algorithm are effected by the length of an array so if the so it 
+dose not really mater if the number are positive or negative in both there cases. 
+
+when it comes to Insertion sort it can be less efficient due to potential needs for many shifts leading to a exponential time complexity 
+
+============================================================================================================================================================
